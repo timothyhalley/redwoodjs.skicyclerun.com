@@ -1,0 +1,41 @@
+{
+  "version": "0.3.0",
+  "configurations": [
+    {
+      "type": "aws-sam",
+      "request": "direct-invoke",
+      "name": "web:src/components/ArticlesCell/ArticlesCell.Loading (nodejs14.x)",
+      "invokeTarget": {
+        "target": "code",
+        "projectRoot": "${workspaceFolder}/web",
+        "lambdaHandler": "src/components/ArticlesCell/ArticlesCell.Loading"
+      },
+      "lambda": {
+        "runtime": "nodejs14.x",
+        "payload": {},
+        "environmentVariables": {}
+      }
+    },
+    {
+      "command": "yarn redwood dev --apiDebugPort 18911",
+      "name": "Run Dev Server",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "name": "Attach API debugger",
+      "port": 18911,
+      "request": "attach",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node",
+      "protocol": "inspector",
+      "stopOnEntry": false,
+      "localRoot": "${workspaceFolder}/node_modules/@redwoodjs/api-server/dist",
+      "remoteRoot": "${workspaceFolder}/node_modules/@redwoodjs/api-server/dist",
+      "sourceMaps": true,
+      "restart": true
+    }
+  ]
+}
