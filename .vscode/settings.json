@@ -8,5 +8,6 @@
   "[prisma]": {
     "editor.formatOnSave": true
   },
-  "editor.fontSize": 24
+  "editor.fontSize": 18,
+  "debug.console.fontSize": 18
 }
